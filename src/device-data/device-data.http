@@ -1,0 +1,14 @@
+@URL = http://127.0.0.1:3000/device-data/
+
+### send acceleration data
+POST {{URL}}acceleration
+Content-Type: application/json
+
+< /Users/shm/projects/panto-api/data/acceleration.json
+
+
+### send gps data
+POST {{URL}}gps
+Content-Type: application/json
+
+< /Users/shm/projects/panto-api/data/gps.json

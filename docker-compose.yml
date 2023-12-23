@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URL=mongodb+srv://panto-api:3mCstpan3PSVzOS2@cluster0.7pj2ykm.mongodb.net/?retryWrites=true&w=majority
+    ports:
+      - 3000:3000

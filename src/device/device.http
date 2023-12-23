@@ -1,0 +1,88 @@
+@URL = http://localhost:3000/
+
+@deviceId = 648ac86702ebd46def9003e7
+
+### Get all devices
+GET {{URL}}devices
+
+### Create new device
+POST {{URL}}devices
+Content-Type: application/json
+
+{
+  "name": "HSL",
+  "type": "device",
+  "api_adress": "",
+  "created_time": "2022-06-21T08:22:26.192Z",
+  "last_connect": "2022-12-05T22:27:45.932Z",
+  "acceleration_sensors": [
+    {
+      "enabled": true,
+      "direction": "top_left"
+    },
+    {
+      "enabled": false,
+      "direction": "bottom_left"
+    },
+    {
+      "enabled": true,
+      "direction": "top_right"
+    },
+    {
+      "enabled": true,
+      "direction": "bottom_right"
+    }
+  ],
+  "default_acceleration_sensor": 1,
+  "api_address": "",
+  "enabled_sensors": {
+    "gps": true,
+    "tempreture": true,
+    "acceleration": true,
+    "camera": true,
+    "laser": false,
+    "battery": false
+  },
+  "installation_pictures": [],
+  "position_on_train": "pantograph_r",
+  "power_supply": {
+    "ultrasonic": false,
+    "solar_panel": false,
+    "wind_turbine": true,
+    "computed_tomography": true
+  },
+  "installation": {
+    "picture": "installation-picture-fef4b5a0-32c8-4e61-b326-3d7f8e46bd34.jpeg",
+    "date": "2022-06-21T08:22:26.192Z",
+    "calibration_video": "caliberatoin video address"
+  },
+  "metric": {
+    "cpu_percent": 17.4,
+    "cpu_temperature": 20.9,
+    "disk_percent_used": 25.5,
+    "last_boot": "2022-12-05T21:56:31.000Z",
+    "mem_percent_used": 10.7,
+    "net_bytes_recv": 1.26,
+    "net_bytes_sent": 5.95
+  },
+  "laser": {
+    "height": null,
+    "zigzag": null
+  }
+}
+
+
+### Get one device
+GET {{URL}}devices/{{deviceId}}
+
+
+### Update new device
+PATCH {{URL}}devices/{{deviceId}}
+Content-Type: application/json
+
+{
+  "name": "HSL2"
+}
+
+### Delete device
+DELETE {{URL}}devices/{{deviceId}}
